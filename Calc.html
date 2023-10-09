@@ -40,7 +40,7 @@
         let resultado;
 
         if (operacao == '+') {
-            resultado = subtrair(n1, n2)
+            resultado = somar(n1, n2)
         } else if (operacao == '-') {
             resultado = subtrair(n1, n2)
         } else if (operacao == '/') {
@@ -48,7 +48,7 @@
         } else if (operacao == '*') {
             resultado = multiplicacao(n1, n2)
         } else if (operacao == '') {
-            resultado = vazio(n1, n2)
+            resultado = alert('Selecione uma operação !')
         }
     }
 
@@ -64,7 +64,7 @@
             }
 
             const soma = num1 + num2;
-            alert(`A subtração é ${soma}!`);
+            alert(`A soma é ${soma}!`);
 
         } else {
             alert('Erro !');
@@ -119,14 +119,12 @@
             }
 
             const multiplicacao = num1 * num2;
-            alert(`A divisão é ${multiplicacao}!`);
+            alert(`A multiplicação é ${multiplicacao}!`);
 
         } else {
             alert('Erro !');
         }
     }
-
-
 </script>
 
 </html>
