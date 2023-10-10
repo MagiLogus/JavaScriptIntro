@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Simples</title>
+    <script src="./scripts/calculadora.js"></script>
 </head>
 
 <body>
     <h1>Calculadora Simples !</h1>
 
-    <form onsubmit="calcular()">
+    <form onsubmit="calcular(event)">
         <label for="n1">Primeiro Número</label>
         <input type="text" id="n1">
 
         <label for="n2">Segundo Número</label>
         <input type="text" id="n2">
+        <p>Resultado:<strong id="result"></strong></p>
         <br><br>
+        
         <label for="operacao">Operação:</label>
         <select name="" id="operacao">
             <option value="">Selecione</option>
@@ -27,112 +30,6 @@
         </select>
         <button>Calcular</button>
     </form>
-
 </body>
-
-<script>
-    function calcular() {
-
-        event.preventDefault();
-        const n1 = window.document.getElementById('n1').value;
-        const n2 = window.document.getElementById('n2').value;
-        const operacao = window.document.getElementById("operacao").value;
-        let resultado;
-
-        if (operacao == '+') {
-            resultado = somar(n1, n2)
-        } else if (operacao == '-') {
-            resultado = subtrair(n1, n2)
-        } else if (operacao == '/') {
-            resultado = divisao(n1, n2)
-        } else if (operacao == '*') {
-            resultado = multiplicacao(n1, n2)
-        } else if (operacao == '') {
-            resultado = alert('Selecione uma operação !')
-        }
-    }
-
-    function somar(n1, n2) {
-
-        if (n1 && n2) {
-            const num1 = parseFloat(n1);
-            const num2 = parseFloat(n2);
-
-            if (isNaN(num1) || isNaN(num2)) {
-                alert('Por favor, insira dois números válidos!');
-                return;
-            }
-
-            const soma = num1 + num2;
-            alert(`A soma é ${soma}!`);
-
-        } else {
-            alert('Informe os dados corretamente !');
-        }
-    }
-
-    function subtrair(n1, n2) {
-
-        if (n1 && n2) {
-            const num1 = parseFloat(n1);
-            const num2 = parseFloat(n2);
-
-            if (isNaN(num1) || isNaN(num2)) {
-                alert('Por favor, insira dois números válidos!');
-                return;
-            }
-
-            const subtrair = num1 - num2;
-            alert(`A subtração é ${subtrair}!`);
-
-        } else {
-            alert('Informe os dados corretamente !');
-        }
-    }
-
-    function divisao(n1, n2) {
-
-        if (n1 && n2) {
-            const num1 = parseFloat(n1);
-            const num2 = parseFloat(n2);
-
-            if (isNaN(num1) || isNaN(num2)) {
-                alert('Por favor, insira dois números válidos!');
-                return;
-            }
-
-            // Validação para divisão por zero
-            if (num2 === 0) {
-                alert('A divisão por zero não é permitida!');
-                return;
-            }
-
-            const divisao = num1 / num2;
-            alert(`A divisão é ${divisao}!`);
-
-        } else {
-            alert('Informe os dados corretamente !');
-        }
-    }
-
-    function multiplicacao(n1, n2) {
-
-        if (n1 && n2) {
-            const num1 = parseFloat(n1);
-            const num2 = parseFloat(n2);
-
-            if (isNaN(num1) || isNaN(num2)) {
-                alert('Por favor, insira dois números válidos!');
-                return;
-            }
-
-            const multiplicacao = num1 * num2;
-            alert(`A multiplicação é ${multiplicacao}!`);
-
-        } else {
-            alert('Informe os dados corretamente !');
-        }
-    }
-</script>
 
 </html>
