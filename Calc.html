@@ -100,6 +100,12 @@
                 return;
             }
 
+            // Validação para divisão por zero
+            if (num2 === 0) {
+                alert('A divisão por zero não é permitida!');
+                return;
+            }
+
             const divisao = num1 / num2;
             alert(`A divisão é ${divisao}!`);
 
